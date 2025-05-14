@@ -1,0 +1,31 @@
+<!-- Weekly Menu -->
+<div class="d-flex align-items-center justify-content-between mb-1">
+  <h3>Týždenné meňu:</h3>
+  <button
+    class="btn btn-primary fw-bold primary"
+    (click)="generateWeeklyMenu()"
+  >
+    <i class="fa-solid fa-rotate-right"></i>
+  </button>
+  <button class="btn btn-success fw-bold primary" (click)="downloadMenuPdf()">
+    <i class="fa-solid fa-file-export"></i> Export PDF
+  </button>
+</div>
+
+<!-- Weekdays Section -->
+<div class="weekdays">
+  <ul class="ps-0">
+    <li *ngFor="let item of menu.weekdays">
+      <app-item [item]="item"></app-item>
+    </li>
+  </ul>
+</div>
+
+<!-- Weekend Section -->
+<div class="weekend">
+  <ul class="ps-0">
+    <li *ngFor="let item of menu.weekend">
+      <app-item [item]="item"></app-item>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,89 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h3>Nový recept</h3>
+  <a routerLink="/recepty" class="btn btn-primary primary">recepty</a>
+</div>
+<form [formGroup]="receptForm" (ngSubmit)="onSubmit()">
+  <!-- Title Field -->
+  <div class="mb-3">
+    <label for="title" class="form-label">Názov:</label>
+    <span
+      *ngIf="
+        receptForm.get('title')?.invalid && receptForm.get('title')?.touched
+      "
+      class="text-danger"
+    >
+      *Čo to bude?
+    </span>
+    <input
+      type="text"
+      id="title"
+      class="form-control no-outline rounded-0 border-0 mb-2"
+      formControlName="title"
+    />
+
+    <label for="days" class="form-label">Na koľko dní:</label>
+    <span
+      *ngIf="receptForm.get('days')?.invalid && receptForm.get('days')?.touched"
+      class="text-danger"
+    >
+      *Na koľko dní?
+    </span>
+    <input
+      type="number"
+      id="days"
+      class="form-control no-outline rounded-0 border-0"
+      formControlName="days"
+      [min]="minMealDays"
+      [value]="minMealDays"
+    />
+  </div>
+
+  <!-- Category Radios -->
+  <div class="form-check form-check-inline">
+    <input
+      type="radio"
+      id="masko"
+      class="form-check-input"
+      value="masko"
+      formControlName="category"
+    />
+    <label class="form-check-label" for="masko">Mäsko</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input
+      type="radio"
+      id="veg"
+      class="form-check-input"
+      value="veg"
+      formControlName="category"
+    />
+    <label class="form-check-label" for="veg">Veg</label>
+  </div>
+
+  <!-- Type Radios (Visible only when "Veg" is selected) -->
+  <div *ngIf="isVegSelected()" class="form-check form-check-inline mb-0">
+    <ng-container *ngFor="let option of ['slane', 'sladke']">
+      <div class="form-check form-check-inline">
+        <input
+          type="radio"
+          [id]="option"
+          class="form-check-input"
+          [value]="option"
+          formControlName="type"
+        />
+        <label class="form-check-label" [for]="option">{{
+          option | titlecase
+        }}</label>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    class="btn bg-primary-subtle w-100 mt-3 rounded-0"
+    [disabled]="receptForm.invalid"
+  >
+    Šup ho tam
+  </button>
+</form>

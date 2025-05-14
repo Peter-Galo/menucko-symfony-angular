@@ -1,0 +1,8 @@
+<ng-container *ngIf="item">
+  <div>
+    <strong>{{ item.day }}</strong>
+  </div>
+  {{ item.meal.title }} ({{ item.meal.category }})
+  <span *ngIf="item.meal.type">- {{ item.meal.type }}</span>
+  <span> - {{ item.meal.days }} {{ item.meal.days > 1 ? "dni" : "deň" }}</span>
+</ng-container>

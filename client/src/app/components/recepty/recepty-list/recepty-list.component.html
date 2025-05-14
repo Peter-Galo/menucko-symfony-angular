@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center justify-content-between mb-1">
+  <h3>Recepty</h3>
+  <a routerLink="/recepty/add" class="btn btn-primary fw-bold primary">+</a>
+</div>
+
+<div *ngFor="let category of getCategories()" class="mb-4">
+  <h6 class="p-1 ps-2 header">{{ category }}</h6>
+  <ul>
+    <li *ngFor="let type of getTypes(category)">
+      <h6 *ngIf="type !== 'null'">{{ type }}</h6>
+      <ul>
+        <li *ngFor="let recept of groupedRecepty[category][type]">
+          {{ recept.title }} - na {{ recept.days }}
+          {{ recept.days > 1 ? "dni" : "deň" }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

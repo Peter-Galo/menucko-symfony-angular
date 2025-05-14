@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: "Rubik", sans-serif;
+}
+
+.active {
+  color: #061727;
+  text-decoration: underline;
+}
+
+.btn {
+  border: none;
+  border-radius: 2px;
+  background-color: #bae6ff;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #82cfff !important;
+}
+
+/* Custom class to remove outline and focus shadow */
+.no-outline:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important; /* Prevent border color change on focus */
+}
+
+/* Input background */
+.form-control {
+  background-color: #f4f4f4 !important;
+}
+
+.form-control:focus {
+  background-color: #dbdbdb !important;
+}
+
+.primary {
+  color: #061727 !important;
+}
+
+/* CHECKBOX */
+.form-check-input:checked {
+  border-color: #007bff; /* Custom border color when checked */
+  background-color: #007bff; /* Custom background color when checked */
+}
+
+.form-check-input {
+  border-radius: 1px !important; /* Makes the radio buttons circular */
+  border: 2px solid #6c757d; /* Default border color */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.form-check-input:hover {
+  border-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.form-check-label {
+  cursor: pointer; /* Makes the label clickable */
+}
+
+li {
+  list-style: none !important;
+}
+
+.header {
+  background-color: #f4f4f4 !important;
+  border-radius: 2px;
+}
+
+h4 {
+  font-weight: normal !important;
+}
