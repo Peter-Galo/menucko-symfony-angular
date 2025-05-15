@@ -4,7 +4,7 @@
 </div>
 
 <div *ngFor="let category of getCategories()" class="mb-4">
-  <h6 class="p-1 ps-2 header">{{ category }}</h6>
+  <h5 class="p-1 ps-2">{{ category }}</h5>
   <ul>
     <li *ngFor="let type of getTypes(category)">
       <h6 *ngIf="type !== 'null'">{{ type }}</h6>
