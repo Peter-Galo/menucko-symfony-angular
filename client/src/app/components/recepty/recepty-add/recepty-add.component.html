@@ -61,7 +61,10 @@
   </div>
 
   <!-- Type Radios (Visible only when "Veg" is selected) -->
-  <div *ngIf="isVegSelected()" class="form-check form-check-inline mb-0">
+  <div
+    *ngIf="isVegSelected()"
+    class="form-check form-check-inline mb-0 ps-0 ps-md-4"
+  >
     <ng-container *ngFor="let option of ['slane', 'sladke']">
       <div class="form-check form-check-inline">
         <input
